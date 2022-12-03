@@ -25,6 +25,7 @@ INSERT INTO `admin` (`id`, `nom_admin`, `prénom_admin`, `password`, `permission
 (3, 'jarry', 'Steeve', '$2y$10$DZSsyLXqnZcRL7shGbWnm.i2YwAcbwEkX5FJe38b9So', 'admin');
 (4, 'pibourse', 'steevy', '$2y$10$b3qEhQc172Nf2F2IHYZfz.t1W71Ps4y4jEEzPAmxjkfCwX5fPSgca', 'admin'),
 
+GRANT SELECT ON cinema* TO admin; 
 
 -- Structure de la table `cinema`
 
@@ -197,5 +198,12 @@ INSERT INTO `user` (`id`, `nom`, `prénom`, `password`) VALUES
 (4, 'primus', 'william', '$2y$10$mWv7a6iaJ1QgAWuU6OsnjuHfSPJNHyqYEbq0/2SAl3H'),
 (5, 'alex', 'andre', '$2y$10$n4cDxjEE9E26Es6Hlmo8fOWgaFCr3zsiV6tAwyuZPS7');
 
+/*
+  Il faudra un client user par par cinéma comme convenu dans le cahier des charges
+*/
+
+GRANT SELECT, UPDATE, DELETE, INSERT
+  ON séance
+  TO user;
 
 COMMIT;
